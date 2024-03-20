@@ -15,7 +15,8 @@ app.get('/api/whoami', (req, res) => {
   const ip = req.headers["x-forwarded-for"]
   const lang = req.headers["accept-language"]
   const software = req.headers["user-agent"]
-  res.json({ipaddress: `::ffff:${ip}`, language: lang, software: software})
+  console.log({ipaddress: ip, language: lang, software: software});
+  res.json({ipaddress: ip, language: lang, software: software})
 })
 
 // http://expressjs.com/en/starter/static-files.html
