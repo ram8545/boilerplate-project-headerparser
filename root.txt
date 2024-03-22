@@ -1,0 +1,25 @@
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Su7FyH5NgutUP3b';
+
+ALTER USER 'mytech'@'localhost' IDENTIFIED BY 'JMJYdc8XbPbyOGT';
+
+ phpmyadmin@localhost
+
+mysql -u mytech -p
+RENAME USER 'myteck'@'localhost' TO 'mytech'@'localhost';
+
+GRANT ALL PRIVILEGES ON *.* TO 'mytech'@'localhost' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;
+
+sudo mysqladmin -p -u mytech version
+
+ip - 167.172.21.247
+
+scp /Users/ramsevakmishra/Downloads/techrytbackend.zip root@167.172.21.247:/home/ubuntu/
+
+rsync -ahvc /Users/ramsevakmishra/Downloads/techrytbackend.zip root@167.172.21.247:/home/ubuntu/
+
+rsync -ahvc /Users/ramsevakmishra/Downloads/techryt.sql root@167.172.21.247:/home/ubuntu/
+
+unzip techrytbackend.zip -d techrytbackend
+
