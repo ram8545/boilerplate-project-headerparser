@@ -11,14 +11,13 @@ var app = express();
 var cors = require('cors');
 app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 204
 
-app.get("/api/whoami", function (req, res) {
-  console.log('req.ip', req.ip);
-  console.log('req.headers', req.headers);
-  const ip = req.headers["x-forwarded-for"];
-  const language = req.headers['accept-language'];
-  const software = req.headers['user-agent'];
-  res.send({ipaddress: ip, language: language, software: software});
-})
+app.get("/api/whoami/", function (req, res) {
+  res.json({
+    ipaddress: req.socket.remoteAddress,
+    language: req.headers['accept-language'],
+    software: req.headers['user-agent']
+});
+});
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
